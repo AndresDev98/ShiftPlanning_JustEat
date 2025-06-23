@@ -4,14 +4,25 @@
 
 #Arquitectura 
 
-ShiftPlanning/
-├── ShiftPlanning.Domain/
-│   └── ShiftPlanning.Domain.csproj
-├── ShiftPlanning.Application/
-│   └── ShiftPlanning.Application.csproj
-├── ShiftPlanning.Infrastructure/
-│   └── ShiftPlanning.Infrastructure.csproj
-├── ShiftPlanning.Console/
-│   ├── Program.cs
-│   └── ShiftPlanning.Console.csproj
-└── ShiftPlanning.sln
+ShiftPlanning.Application
+│
+├── Interfaces
+│   ├── IEmailSender.cs
+│   ├── IShiftImageProcessor.cs
+│   └── IShiftMonitorService.cs
+│
+├── Services
+│   ├── ShiftMonitorService.cs
+│   ├── SmtpEmailSender.cs
+│   └── (opcional) TestRunner.cs ← si quieres pruebas interactivas
+
+ShiftPlanning.Console
+└── Program.cs ← entry point con top-level statements
+
+ShiftPlanning.Domain
+└── Entities
+    └── ShiftImage.cs
+
+ShiftPlanning.Infrastructure
+└── Services
+    └── TesseractShiftImageProcessor.cs
